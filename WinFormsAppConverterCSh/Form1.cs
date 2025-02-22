@@ -1,11 +1,9 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.MSBuild;
-using System.Collections.Generic;
-using WinFormsAppConverterCSh.Converters;
-using WinFormsAppConverterCSh.Models;
+using WinFormsAppConverterCSharp.Converters;
 
-namespace WinFormsAppConverterCSh;
+namespace WinFormsAppConverterCSharp;
 
 public partial class FormMain : Form
 {
@@ -36,6 +34,7 @@ public partial class FormMain : Form
             _projects = _solution.Projects.ToList();
             comboBoxProjects.Items.Clear();
             comboBoxNamespaces.Items.Clear();
+            _namespaces = [];
             comboBoxProjects.Items.AddRange(_projects.Select(x => x.Name).ToArray());
         }
         catch { MessageBox.Show("Ошибка во время открытия решения."); }

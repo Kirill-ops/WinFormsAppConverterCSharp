@@ -1,7 +1,7 @@
 ﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
-using WinFormsAppConverterCSh.Models;
+using WinFormsAppConverterCSharp.Models;
 
-namespace WinFormsAppConverterCSh.Converters;
+namespace WinFormsAppConverterCSharp.Converters;
 
 public class CSharpToTypescript
 {

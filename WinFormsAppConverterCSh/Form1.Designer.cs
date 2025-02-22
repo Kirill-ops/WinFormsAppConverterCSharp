@@ -1,4 +1,4 @@
-﻿namespace WinFormsAppConverterCSh
+﻿namespace WinFormsAppConverterCSharp
 {
     partial class FormMain
     {

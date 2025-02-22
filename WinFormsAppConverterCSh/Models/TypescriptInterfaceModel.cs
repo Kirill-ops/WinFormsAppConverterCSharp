@@ -1,4 +1,4 @@
-﻿namespace WinFormsAppConverterCSh.Models;
+﻿namespace WinFormsAppConverterCSharp.Models;
 
 public class TypescriptInterfaceModel
 {
