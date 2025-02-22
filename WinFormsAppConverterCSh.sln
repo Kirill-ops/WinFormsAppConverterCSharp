@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsAppConverterCSh", "WinFormsAppConverterCSh\WinFormsAppConverterCSh.csproj", "{2CDEDCD1-8262-4945-B660-8CF3B90C4560}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CDEDCD1-8262-4945-B660-8CF3B90C4560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CDEDCD1-8262-4945-B660-8CF3B90C4560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CDEDCD1-8262-4945-B660-8CF3B90C4560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CDEDCD1-8262-4945-B660-8CF3B90C4560}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F50397BB-C13A-4C2C-9A69-98E596E1875C}
+	EndGlobalSection
+EndGlobal
