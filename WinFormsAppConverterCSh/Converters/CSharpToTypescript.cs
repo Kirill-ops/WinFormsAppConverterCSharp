@@ -1,4 +1,5 @@
 ﻿using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Reflection.Metadata;
 using WinFormsAppConverterCSharp.Models;
 
 namespace WinFormsAppConverterCSharp.Converters;
@@ -60,6 +61,7 @@ public class CSharpToTypescript
     {
         var propertyName = ConvertToCamelCase(propertySyntax.Identifier.Text);
         string typeName = propertySyntax.Type.ToString();
+        var resultTypeName = ("", "");
 
         // Обработка nullable типов
         if (typeName.EndsWith("?"))
@@ -72,27 +74,37 @@ public class CSharpToTypescript
         if (typeName.StartsWith("IReadOnlyList<"))
         {
             string genericType = typeName.Substring("IReadOnlyList<".Length, typeName.Length - "IReadOnlyList<".Length - 1);
-            return ($"{propertyName}: I{genericType}[];", $"I{genericType}"); ;
+            resultTypeName = GetTypeName(genericType);
+        }
+        else
+        {
+            resultTypeName = GetTypeName(typeName);
         }
 
-        // Простые типы
-        switch (typeName)
+        return ($"{propertyName}: {resultTypeName.Item1};", resultTypeName.Item2);
+
+
+    }
+
+    static (string type, string import) GetTypeName(string cSharTypeName)
+    {
+        switch (cSharTypeName)
         {
             case "int":
             case "long":
             case "double":
             case "float":
             case "decimal":
-                return ($"{propertyName}: number;", "");
+                return ("number", "");
             case "bool":
-                return ($"{propertyName}: boolean;", "");
+                return ("boolean", "");
             case "string":
             case "DateTimeOffset":
             case "DateOnly":
             case "Guid":
-                return ($"{propertyName}: string;", "");
+                return ("string", "");
             default:
-                return ($"{propertyName}: I{typeName};", $"I{typeName}"); // TODO 1: 
+                return ($"I{cSharTypeName}", $"I{cSharTypeName}"); // TODO 1: 
         }
     }
 
