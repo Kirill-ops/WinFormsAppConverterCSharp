@@ -75,6 +75,7 @@ public class CSharpToTypescript
         {
             string genericType = typeName.Substring("IReadOnlyList<".Length, typeName.Length - "IReadOnlyList<".Length - 1);
             resultTypeName = GetTypeName(genericType);
+            resultTypeName.Item1 += "[]";
         }
         else
         {
