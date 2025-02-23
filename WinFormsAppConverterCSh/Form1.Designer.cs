@@ -96,7 +96,7 @@
             buttonConvert.Name = "buttonConvert";
             buttonConvert.Size = new Size(271, 29);
             buttonConvert.TabIndex = 5;
-            buttonConvert.Text = "Конвектировать";
+            buttonConvert.Text = "Конвертировать";
             buttonConvert.UseVisualStyleBackColor = true;
             buttonConvert.Click += ButtonConvert_Click;
             // 
