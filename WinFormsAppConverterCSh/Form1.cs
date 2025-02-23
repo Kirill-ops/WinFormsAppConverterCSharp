@@ -117,7 +117,7 @@ public partial class FormMain : Form
 
             string indexFilePath = Path.Combine(outputDirectory, "index.ts");
             using var indexWriter = new StreamWriter(indexFilePath);
-            var indexTsCode = string.Join("\n", modelTsInterfaces.Select(x => $"export type {{ {x.Name} }} from './{x.FileName}';").ToList());
+            var indexTsCode = string.Join("\n", modelTsInterfaces.Select(x => $"export type {{ {x.Name} }} from './{x.FileName.Replace(".ts", "")}';").ToList());
             indexWriter.Write(indexTsCode);
         }
 
