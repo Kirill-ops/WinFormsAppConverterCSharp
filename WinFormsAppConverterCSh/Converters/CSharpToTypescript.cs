@@ -36,7 +36,7 @@ public class CSharpToTypescript
             if (member is PropertyDeclarationSyntax property)
             {
                 var (type, import) = GetTypeToTypeScript(property);
-                tsCode += $"\n    {type}";
+                tsCode += $"\n  {type}";
 
                 if (import != "" && !imports.Contains(import))
                     imports.Add(import);
