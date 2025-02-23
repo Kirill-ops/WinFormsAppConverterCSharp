@@ -45,7 +45,7 @@ public class CSharpToTypescript
 
         if (imports.Count > 0)
         {
-            tsCode = $"import {{{string.Join(", ", imports)}}} from \".\";\n\n{tsCode}";
+            tsCode = $"import {{ {string.Join(", ", imports)} }} from \".\";\n\n{tsCode}";
         }
 
         return new()
